@@ -23,20 +23,21 @@ export default function Navbar() {
     { name: "Contact", href: "#contact" },
   ]
 
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/10 backdrop-blur-lg border-b border-white/20" : "bg-transparent"
+        isScrolled ? "bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-white">
+            <div className={`text-2xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 PixelCraft
               </span>
-              <span className="text-white ml-1">Studio</span>
+              <span className={`ml-1 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>Studio</span>
             </div>
           </div>
 
@@ -46,7 +47,7 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-white/80 hover:text-white transition-colors duration-300 relative group"
+                className={`${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/80 hover:text-white'} transition-colors duration-300 relative group`}
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
@@ -59,16 +60,16 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white p-2">
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className={`p-2 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
               <div className="w-6 h-6 flex flex-col justify-center items-center">
                 <span
-                  className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"}`}
+                  className={`${isScrolled ? 'bg-gray-900' : 'bg-white'} block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"}`}
                 ></span>
                 <span
-                  className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isMobileMenuOpen ? "opacity-0" : "opacity-100"}`}
+                  className={`${isScrolled ? 'bg-gray-900' : 'bg-white'} block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isMobileMenuOpen ? "opacity-0" : "opacity-100"}`}
                 ></span>
                 <span
-                  className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"}`}
+                  className={`${isScrolled ? 'bg-gray-900' : 'bg-white'} block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"}`}
                 ></span>
               </div>
             </button>
@@ -86,7 +87,7 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className="block text-white/80 hover:text-white transition-colors duration-300"
+                className={`block ${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/80 hover:text-white'} transition-colors duration-300`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}

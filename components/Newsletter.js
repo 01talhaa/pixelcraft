@@ -41,7 +41,7 @@ export default function Newsletter() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden"
+      className="py-20 bg-gradient-to-br from-black to-gray-900 relative overflow-hidden"
     >
       {/* Animated Background */}
       <div className="absolute inset-0">
@@ -49,7 +49,7 @@ export default function Newsletter() {
           {[...Array(30)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-2 h-2 bg-white rounded-full animate-pulse"
+              className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-pulse"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -69,13 +69,13 @@ export default function Newsletter() {
             <>
               {/* Header */}
               <div className="mb-12">
-                <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-                  <span className="text-purple-300 font-semibold">Stay Updated</span>
+                <div className="inline-block bg-yellow-100/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-yellow-400/20">
+                  <span className="text-yellow-300 font-semibold">Stay Updated</span>
                 </div>
 
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                   Join Our
-                  <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
                     {" "}
                     Creative Newsletter
                   </span>
@@ -88,7 +88,7 @@ export default function Newsletter() {
               </div>
 
               {/* Newsletter Form */}
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
+              <div className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-gray-700">
                 <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                   <div className="flex-1">
                     <input
@@ -97,16 +97,16 @@ export default function Newsletter() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email address"
                       required
-                      className="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-300"
+                      className="w-full px-6 py-4 bg-gray-700/50 backdrop-blur-sm border border-gray-600 rounded-full text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300"
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                    className="bg-gradient-to-r from-yellow-500 to-amber-600 text-black px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-yellow-500/25 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                   >
                     {isLoading ? (
-                      <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                      <div className="w-6 h-6 border-2 border-black/30 border-t-black rounded-full animate-spin"></div>
                     ) : (
                       "Subscribe"
                     )}
@@ -161,11 +161,11 @@ export default function Newsletter() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={() => setIsSubscribed(false)}
-                  className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full font-semibold border border-white/20 hover:bg-white/20 transition-all duration-300"
+                  className="bg-gray-700/50 backdrop-blur-sm text-white px-6 py-3 rounded-full font-semibold border border-gray-600 hover:bg-gray-700 transition-all duration-300"
                 >
                   Subscribe Another Email
                 </button>
-                <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105">
+                <button className="bg-gradient-to-r from-yellow-500 to-amber-600 text-black px-6 py-3 rounded-full font-semibold hover:shadow-xl hover:shadow-yellow-500/25 transition-all duration-300 transform hover:scale-105">
                   Explore Our Work
                 </button>
               </div>

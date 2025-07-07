@@ -27,17 +27,17 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-black/95 backdrop-blur-lg border-b border-gray-800 shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <div className={`text-2xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <div className={`text-2xl font-bold ${isScrolled ? 'text-white' : 'text-white'}`}>
+              <span className="bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
                 PixelCraft
               </span>
-              <span className={`ml-1 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>Studio</span>
+              <span className={`ml-1 ${isScrolled ? 'text-white' : 'text-white'}`}>Studio</span>
             </div>
           </div>
 
@@ -47,29 +47,29 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className={`${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/80 hover:text-white'} transition-colors duration-300 relative group`}
+                className={`${isScrolled ? 'text-white hover:text-yellow-400' : 'text-white/80 hover:text-white'} transition-colors duration-300 relative group`}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
-            <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105">
+            <button className="bg-gradient-to-r from-yellow-500 to-amber-600 text-black px-6 py-2 rounded-full hover:shadow-lg hover:shadow-yellow-500/25 transition-all duration-300 transform hover:scale-105 font-semibold">
               Get Quote
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className={`p-2 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className={`p-2 ${isScrolled ? 'text-white' : 'text-white'}`}>
               <div className="w-6 h-6 flex flex-col justify-center items-center">
                 <span
-                  className={`${isScrolled ? 'bg-gray-900' : 'bg-white'} block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"}`}
+                  className={`${isScrolled ? 'bg-white' : 'bg-white'} block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"}`}
                 ></span>
                 <span
-                  className={`${isScrolled ? 'bg-gray-900' : 'bg-white'} block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isMobileMenuOpen ? "opacity-0" : "opacity-100"}`}
+                  className={`${isScrolled ? 'bg-white' : 'bg-white'} block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isMobileMenuOpen ? "opacity-0" : "opacity-100"}`}
                 ></span>
                 <span
-                  className={`${isScrolled ? 'bg-gray-900' : 'bg-white'} block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"}`}
+                  className={`${isScrolled ? 'bg-white' : 'bg-white'} block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"}`}
                 ></span>
               </div>
             </button>
@@ -87,13 +87,13 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className={`block ${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/80 hover:text-white'} transition-colors duration-300`}
+                className={`block ${isScrolled ? 'text-white hover:text-yellow-400' : 'text-white/80 hover:text-white'} transition-colors duration-300`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
               </a>
             ))}
-            <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300">
+            <button className="w-full bg-gradient-to-r from-yellow-500 to-amber-600 text-black px-6 py-2 rounded-full hover:shadow-lg hover:shadow-yellow-500/25 transition-all duration-300 font-semibold">
               Get Quote
             </button>
           </div>

@@ -26,11 +26,11 @@ export default function Home() {
 
   if (isLoading) {
     return (
-      <div className="fixed inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center z-50">
+      <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 flex items-center justify-center z-50">
         <div className="text-center">
           <div className="relative">
             <div className="w-20 h-20 border-4 border-white/20 rounded-full animate-spin border-t-white mx-auto mb-4"></div>
-            <div className="absolute inset-0 w-20 h-20 border-4 border-transparent rounded-full animate-ping border-t-purple-400 mx-auto"></div>
+            <div className="absolute inset-0 w-20 h-20 border-4 border-transparent rounded-full animate-ping border-t-yellow-400 mx-auto"></div>
           </div>
           <h2 className="text-2xl font-bold text-white animate-pulse">PixelCraft Studio</h2>
           <p className="text-white/70 mt-2">Loading amazing designs...</p>

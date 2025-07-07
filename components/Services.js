@@ -67,13 +67,13 @@ export default function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
+      className="py-20 bg-gradient-to-br from-black to-gray-900 relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-400/20 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-amber-400/20 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-yellow-600/20 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -81,16 +81,16 @@ export default function Services() {
         <div
           className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          <div className="inline-block bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-full mb-6">
-            <span className="text-purple-600 font-semibold">Our Services</span>
+          <div className="inline-block bg-gradient-to-r from-yellow-100 to-amber-100 px-4 py-2 rounded-full mb-6">
+            <span className="text-amber-700 font-semibold">Our Services</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             What We
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"> Create</span>
+            <span className="bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent"> Create</span>
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             From concept to completion, we offer comprehensive design services that bring your vision to life with
             creativity and precision.
           </p>
@@ -101,7 +101,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
+              className={`group relative bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -110,7 +110,7 @@ export default function Services() {
             >
               {/* Background Gradient */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl transition-opacity duration-300 ${
+                className={`absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-amber-500/5 rounded-2xl transition-opacity duration-300 ${
                   hoveredService === index ? "opacity-100" : "opacity-0"
                 }`}
               ></div>
@@ -122,18 +122,18 @@ export default function Services() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
 
                 {/* Features */}
                 <div className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center text-sm text-gray-500">
-                      <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-3"></div>
+                    <div key={featureIndex} className="flex items-center text-sm text-gray-400">
+                      <div className="w-1.5 h-1.5 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-full mr-3"></div>
                       {feature}
                     </div>
                   ))}
@@ -141,7 +141,7 @@ export default function Services() {
 
                 {/* Hover Effect */}
                 <div
-                  className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-b-2xl transition-all duration-300 ${
+                  className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-b-2xl transition-all duration-300 ${
                     hoveredService === index ? "opacity-100" : "opacity-0"
                   }`}
                 ></div>
@@ -154,7 +154,7 @@ export default function Services() {
         <div
           className={`text-center mt-16 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105">
+          <button className="bg-gradient-to-r from-yellow-500 to-amber-600 text-black px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-yellow-500/25 transition-all duration-300 transform hover:scale-105">
             Get Custom Quote
           </button>
         </div>

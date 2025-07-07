@@ -63,12 +63,12 @@ export default function Team() {
     <section
       id="team"
       ref={sectionRef}
-      className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
+      className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-400/20 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-amber-400/20 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -76,19 +76,19 @@ export default function Team() {
         <div
           className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          <div className="inline-block bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-full mb-6">
-            <span className="text-purple-600 font-semibold">Our Team</span>
+          <div className="inline-block bg-gradient-to-r from-yellow-100 to-amber-100 px-4 py-2 rounded-full mb-6">
+            <span className="text-amber-700 font-semibold">Our Team</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Meet the
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
               {" "}
               Creative Minds
             </span>
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Our talented team of designers, artists, and creative professionals work together to bring your vision to
             life with passion and expertise.
           </p>
@@ -107,7 +107,7 @@ export default function Team() {
               onMouseLeave={() => setHoveredMember(null)}
             >
               {/* Card */}
-              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4">
+              <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-700">
                 {/* Image Container */}
                 <div className="relative overflow-hidden">
                   <img
@@ -149,17 +149,17 @@ export default function Team() {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-yellow-400 transition-colors duration-300">
                     {member.name}
                   </h3>
-                  <p className="text-purple-600 font-semibold mb-3">{member.role}</p>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{member.bio}</p>
+                  <p className="text-yellow-400 font-semibold mb-3">{member.role}</p>
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">{member.bio}</p>
 
                   {/* Skills */}
                   <div className="space-y-2">
                     {member.skills.map((skill, skillIndex) => (
-                      <div key={skillIndex} className="flex items-center text-xs text-gray-500">
-                        <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-2"></div>
+                      <div key={skillIndex} className="flex items-center text-xs text-gray-400">
+                        <div className="w-1.5 h-1.5 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-full mr-2"></div>
                         {skill}
                       </div>
                     ))}
@@ -168,7 +168,7 @@ export default function Team() {
 
                 {/* Bottom Border Animation */}
                 <div
-                  className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ${
+                  className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 to-amber-500 transition-all duration-300 ${
                     hoveredMember === index ? "opacity-100" : "opacity-0"
                   }`}
                 ></div>
@@ -181,8 +181,8 @@ export default function Team() {
         <div
           className={`text-center mt-16 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          <p className="text-gray-600 mb-6">Want to join our creative team?</p>
-          <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105">
+          <p className="text-gray-300 mb-6">Want to join our creative team?</p>
+          <button className="bg-gradient-to-r from-yellow-500 to-amber-600 text-black px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-yellow-500/25 transition-all duration-300 transform hover:scale-105">
             View Open Positions
           </button>
         </div>

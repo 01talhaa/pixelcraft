@@ -10,6 +10,186 @@
   body {
     font-family: "Inter", system-ui, -apple-system, sans-serif;
   }
+
+  :root {
+    /* Brand Colors */
+    --brand-blue: #0084FC;
+    --brand-blue-light: #3B9EFF;
+    --brand-blue-dark: #0066CC;
+    --brand-black: #000000;
+    --brand-white: #FFFFFF;
+    
+    /* Background Colors */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8FAFC;
+    --bg-accent: #EBF8FF;
+    
+    /* Text Colors */
+    --text-primary: #1E293B;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+    --text-accent: #0084FC;
+    
+    /* Button Colors */
+    --btn-primary-bg: linear-gradient(135deg, #0084FC 0%, #0066CC 100%);
+    --btn-primary-text: #FFFFFF;
+    --btn-secondary-bg: #F8FAFC;
+    --btn-secondary-text: #0084FC;
+    --btn-secondary-border: #0084FC;
+    
+    /* Tailwind HSL variables for shadcn compatibility */
+    --primary: 218 100% 50%;
+    --primary-foreground: 0 0% 100%;
+  }
+}
+
+@layer components {
+  /* Background Classes */
+  .bg-brand-primary {
+    background-color: var(--bg-primary);
+  }
+  
+  .bg-brand-secondary {
+    background-color: var(--bg-secondary);
+  }
+  
+  .bg-brand-accent {
+    background-color: var(--bg-accent);
+  }
+  
+  /* Text Classes */
+  .text-brand-primary {
+    color: var(--text-primary);
+  }
+  
+  .text-brand-secondary {
+    color: var(--text-secondary);
+  }
+  
+  .text-brand-muted {
+    color: var(--text-muted);
+  }
+  
+  .text-brand-accent {
+    color: var(--text-accent);
+  }
+  
+  /* Button Classes */
+  .btn-primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 25px -5px rgba(0, 132, 252, 0.25);
+  }
+  
+  .btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    border: 2px solid var(--btn-secondary-border);
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    transform: scale(1);
+  }
+  
+  .btn-secondary:hover {
+    transform: scale(1.05);
+    background-color: #EBF8FF;
+  }
+  
+  /* Gradient Text */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Card Classes */
+  .card-primary {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #DBEAFE;
+    transition: all 0.3s ease;
+  }
+  
+  .card-primary:hover {
+    box-shadow: 0 25px 25px -5px rgba(0, 0, 0, 0.25);
+  }
+  
+  .card-secondary {
+    background-color: #EBF8FF;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid #BFDBFE;
+    transition: all 0.3s ease;
+  }
+  
+  .card-secondary:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Section Classes */
+  .section-primary {
+    padding: 5rem 0;
+    background-color: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .section-secondary {
+    padding: 5rem 0;
+    background-color: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .section-accent {
+    padding: 5rem 0;
+    background-color: var(--bg-accent);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Badge Classes */
+  .badge-primary {
+    display: inline-block;
+    background-color: #DBEAFE;
+    color: #1E40AF;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+  }
+  
+  .badge-secondary {
+    display: inline-block;
+    background-color: #EBF8FF;
+    color: #1D4ED8;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
 }
 
 @layer utilities {
@@ -81,10 +261,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #d4af37, #ffdf00);
+  background: linear-gradient(45deg, #0084FC, #0066CC);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #b8860b, #ffd700);
+  background: linear-gradient(45deg, #0066CC, #0084FC);
 }

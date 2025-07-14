@@ -1,0 +1,18 @@
+<svg width="582" height="315" viewBox="0 0 582 315" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main Logo Background -->
+  <rect width="582" height="315" fill="#000000"/>
+  
+  <!-- PIXEL Text -->
+  <text x="100" y="180" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="#0084FC">PIXEL</text>
+  
+  <!-- PRIMP Text -->
+  <text x="100" y="280" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="#0084FC">PRIMP</text>
+  
+  <!-- Icon/Symbol -->
+  <rect x="50" y="50" width="200" height="200" rx="20" fill="#0084FC"/>
+  <rect x="80" y="80" width="40" height="40" fill="#FFFFFF"/>
+  <rect x="140" y="80" width="80" height="40" fill="#FFFFFF"/>
+  <rect x="80" y="140" width="80" height="40" fill="#FFFFFF"/>
+  <rect x="180" y="140" width="40" height="40" fill="#FFFFFF"/>
+  <rect x="120" y="200" width="40" height="40" fill="#FFFFFF"/>
+</svg>

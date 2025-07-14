@@ -13,6 +13,24 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
+  			// Custom brand colors using CSS variables
+  			brand: {
+  				blue: 'var(--brand-blue)',
+  				'blue-light': 'var(--brand-blue-light)',
+  				'blue-dark': 'var(--brand-blue-dark)',
+  				black: 'var(--brand-black)',
+  				white: 'var(--brand-white)',
+  			},
+  			// Background colors
+  			'bg-brand-primary': 'var(--bg-primary)',
+  			'bg-brand-secondary': 'var(--bg-secondary)',
+  			'bg-brand-accent': 'var(--bg-accent)',
+  			// Text colors
+  			'text-brand-primary': 'var(--text-primary)',
+  			'text-brand-secondary': 'var(--text-secondary)',
+  			'text-brand-muted': 'var(--text-muted)',
+  			'text-brand-accent': 'var(--text-accent)',
+  			// Original shadcn colors
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -24,8 +42,8 @@ const config: Config = {
   				foreground: 'hsl(var(--popover-foreground))'
   			},
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
+  				DEFAULT: 'var(--brand-blue)',
+  				foreground: 'var(--brand-white)'
   			},
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary))',

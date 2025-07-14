@@ -18,15 +18,18 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-blue-50 to-blue-100">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800">
+      <div className="absolute inset-0">
         <div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-20"
           style={{
-            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(212, 175, 55, 0.4) 0%, transparent 50%)`,
+            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(0, 132, 252, 0.3) 0%, transparent 50%)`,
           }}
         ></div>
+        
+        {/* Additional gradient overlay for better effect visibility */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-blue-600/10"></div>
       </div>
 
       {/* Floating Elements */}
@@ -34,7 +37,7 @@ export default function Hero() {
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-white/20 rounded-full animate-pulse"
+            className="absolute w-2 h-2 bg-blue-400/60 rounded-full animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -48,21 +51,21 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
         <div className="animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-brand-primary mb-6 leading-tight">
             <span className="block">Creative</span>
-            <span className="bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-600 bg-clip-text text-transparent animate-gradient-x">
+            <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent animate-gradient-x">
               Design Studio
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-brand-secondary mb-8 max-w-3xl mx-auto leading-relaxed">
             We transform your vision into stunning visual experiences through
-            <span className="text-yellow-300"> photo editing</span> and
-            <span className="text-amber-300"> graphic design</span> excellence
+            <span className="text-brand-accent font-semibold"> photo editing</span> and
+            <span className="text-brand-accent font-semibold"> graphic design</span> excellence
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="group bg-gradient-to-r from-yellow-500 to-amber-600 text-black px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-yellow-500/25 transition-all duration-300 transform hover:scale-105">
+            <button className="btn-primary group">
               <span className="flex items-center">
                 View Our Work
                 <svg
@@ -76,7 +79,7 @@ export default function Hero() {
               </span>
             </button>
 
-            <button className="group border-2 border-yellow-400/30 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-yellow-400/10 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm">
+            <button className="btn-secondary group">
               <span className="flex items-center">
                 <svg
                   className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300"
@@ -103,10 +106,10 @@ export default function Hero() {
             { number: "24/7", label: "Support Available" },
           ].map((stat, index) => (
             <div key={index} className="text-center group">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-3xl md:text-4xl font-bold text-brand-accent mb-2 group-hover:scale-110 transition-transform duration-300">
                 {stat.number}
               </div>
-              <div className="text-white/60 text-sm md:text-base">{stat.label}</div>
+              <div className="text-brand-secondary text-sm md:text-base">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -114,8 +117,8 @@ export default function Hero() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+        <div className="w-6 h-10 border-2 border-brand-accent/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-brand-accent rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

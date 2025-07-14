@@ -41,15 +41,32 @@ export default function Newsletter() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-gradient-to-br from-black to-gray-900 relative overflow-hidden"
+      className="section-secondary"
     >
-      {/* Animated Background */}
+      {/* Enhanced Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 opacity-20">
-          {[...Array(30)].map((_, i) => (
+        <div className="absolute inset-0 opacity-5">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230084FC' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          ></div>
+        </div>
+        
+        {/* Floating Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-blue-300/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+        </div>
+
+        {/* Animated Particles */}
+        <div className="absolute inset-0 opacity-30">
+          {[...Array(20)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-pulse"
+              className="absolute w-2 h-2 bg-blue-400 rounded-full animate-pulse"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -69,26 +86,26 @@ export default function Newsletter() {
             <>
               {/* Header */}
               <div className="mb-12">
-                <div className="inline-block bg-yellow-100/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-yellow-400/20">
-                  <span className="text-yellow-300 font-semibold">Stay Updated</span>
+                <div className="badge-primary mb-6">
+                  <span>Stay Updated</span>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <h2 className="text-4xl md:text-5xl font-bold text-brand-primary mb-6">
                   Join Our
-                  <span className="bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
+                  <span className="text-gradient-primary">
                     {" "}
                     Creative Newsletter
                   </span>
                 </h2>
 
-                <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-xl text-brand-secondary max-w-2xl mx-auto leading-relaxed">
                   Get exclusive design tips, behind-the-scenes content, and be the first to know about our latest
                   projects and special offers.
                 </p>
               </div>
 
               {/* Newsletter Form */}
-              <div className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-gray-700">
+              <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-8 border border-gray-200 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1">
                 <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                   <div className="flex-1">
                     <input
@@ -97,23 +114,28 @@ export default function Newsletter() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email address"
                       required
-                      className="w-full px-6 py-4 bg-gray-700/50 backdrop-blur-sm border border-gray-600 rounded-full text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300"
+                      className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-full text-brand-primary placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-300"
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="bg-gradient-to-r from-yellow-500 to-amber-600 text-black px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-yellow-500/25 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                    className="btn-primary px-8 py-4 rounded-full disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                   >
                     {isLoading ? (
-                      <div className="w-6 h-6 border-2 border-black/30 border-t-black rounded-full animate-spin"></div>
+                      <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                     ) : (
-                      "Subscribe"
+                      <>
+                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                        Subscribe
+                      </>
                     )}
                   </button>
                 </form>
 
-                <p className="text-white/60 text-sm mt-4">No spam, unsubscribe at any time. We respect your privacy.</p>
+                <p className="text-brand-secondary text-sm mt-4">No spam, unsubscribe at any time. We respect your privacy.</p>
               </div>
 
               {/* Benefits */}
@@ -135,10 +157,12 @@ export default function Newsletter() {
                     description: "Early access to discounts and promotions",
                   },
                 ].map((benefit, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-3xl mb-3">{benefit.icon}</div>
-                    <h3 className="text-white font-semibold mb-2">{benefit.title}</h3>
-                    <p className="text-white/70 text-sm">{benefit.description}</p>
+                  <div key={index} className="text-center transform hover:scale-105 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                      <span className="text-2xl">{benefit.icon}</span>
+                    </div>
+                    <h3 className="text-brand-primary font-semibold mb-2">{benefit.title}</h3>
+                    <p className="text-brand-secondary text-sm">{benefit.description}</p>
                   </div>
                 ))}
               </div>
@@ -146,26 +170,26 @@ export default function Newsletter() {
           ) : (
             /* Success State */
             <div className="py-12">
-              <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
 
-              <h2 className="text-4xl font-bold text-white mb-4">Welcome to the Family! 🎉</h2>
+              <h2 className="text-4xl font-bold text-brand-primary mb-4">Welcome to the Family! 🎉</h2>
 
-              <p className="text-xl text-white/80 mb-8">
+              <p className="text-xl text-brand-secondary mb-8">
                 Thank you for subscribing! Check your inbox for a welcome email with exclusive design resources.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={() => setIsSubscribed(false)}
-                  className="bg-gray-700/50 backdrop-blur-sm text-white px-6 py-3 rounded-full font-semibold border border-gray-600 hover:bg-gray-700 transition-all duration-300"
+                  className="btn-secondary"
                 >
                   Subscribe Another Email
                 </button>
-                <button className="bg-gradient-to-r from-yellow-500 to-amber-600 text-black px-6 py-3 rounded-full font-semibold hover:shadow-xl hover:shadow-yellow-500/25 transition-all duration-300 transform hover:scale-105">
+                <button className="btn-primary">
                   Explore Our Work
                 </button>
               </div>

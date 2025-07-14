@@ -29,7 +29,7 @@ export default function AdminPage() {
 
   const handleLogin = (credentials) => {
     // Demo authentication - in production, use proper authentication
-    if (credentials.username === "admin" && credentials.password === "pixelcraft2024") {
+    if (credentials.username === "admin" && credentials.password === "pixelprimp2024") {
       const token = {
         user: "admin",
         expiry: Date.now() + (24 * 60 * 60 * 1000), // 24 hours

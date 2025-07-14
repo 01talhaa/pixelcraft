@@ -153,7 +153,7 @@ export default function AdminLogin({ onLogin }) {
 
           <div className="text-center">
             <p className="text-xs text-gray-500 mt-4">
-              Demo credentials: <span className="text-brand-accent font-semibold">admin</span> / <span className="text-brand-accent font-semibold">pixelcraft2024</span>
+              Demo credentials: <span className="text-brand-accent font-semibold">admin</span> / <span className="text-brand-accent font-semibold">pixelprimp2024</span>
             </p>
           </div>
         </CardContent>

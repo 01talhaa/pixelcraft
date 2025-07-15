@@ -96,13 +96,13 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`text-center mb-12 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          <div className="badge-primary mb-6">
+          <div className="badge-primary mb-4">
             <span>Client Testimonials</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-primary mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-primary mb-4">
             What Our
             <span className="text-gradient-primary">
               {" "}
@@ -110,7 +110,7 @@ export default function Testimonials() {
             </span>
           </h2>
 
-          <p className="text-xl text-brand-secondary max-w-3xl mx-auto">
+          <p className="text-lg text-brand-secondary max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our satisfied clients have to say about working with PixelPrimp
             Studio.
           </p>
@@ -120,24 +120,24 @@ export default function Testimonials() {
         <div
           className={`transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             {/* Main Testimonial */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 relative overflow-hidden border border-gray-100 shadow-xl">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-8 relative overflow-hidden border border-gray-100 shadow-xl">
               {/* Quote Icon */}
-              <div className="absolute top-8 left-8 text-6xl text-brand-primary/20 font-serif">"</div>
+              <div className="absolute top-6 left-6 text-4xl text-brand-primary/20 font-serif">"</div>
 
               <div className="relative z-10">
                 {/* Stars */}
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-4">
                   {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                    <svg key={i} className="w-6 h-6 text-brand-primary fill-current" viewBox="0 0 24 24">
+                    <svg key={i} className="w-5 h-5 text-brand-primary fill-current" viewBox="0 0 24 24">
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
                   ))}
                 </div>
 
                 {/* Testimonial Content */}
-                <blockquote className="text-xl md:text-2xl text-brand-primary text-center leading-relaxed mb-8 font-medium">
+                <blockquote className="text-lg md:text-xl text-brand-primary text-center leading-relaxed mb-6 font-medium">
                   {testimonials[currentTestimonial].content}
                 </blockquote>
 
@@ -146,29 +146,29 @@ export default function Testimonials() {
                   <img
                     src={testimonials[currentTestimonial].image || "/placeholder.svg"}
                     alt={testimonials[currentTestimonial].name}
-                    className="w-16 h-16 rounded-full object-cover mr-4 border-4 border-white shadow-lg"
+                    className="w-12 h-12 rounded-full object-cover mr-3 border-3 border-white shadow-lg"
                   />
                   <div className="text-center">
-                    <h4 className="text-lg font-bold text-brand-primary">{testimonials[currentTestimonial].name}</h4>
-                    <p className="text-brand-primary font-semibold">{testimonials[currentTestimonial].role}</p>
-                    <p className="text-brand-secondary text-sm">{testimonials[currentTestimonial].company}</p>
-                    <p className="text-brand-secondary text-xs mt-1">Project: {testimonials[currentTestimonial].project}</p>
+                    <h4 className="text-base font-bold text-brand-primary">{testimonials[currentTestimonial].name}</h4>
+                    <p className="text-brand-primary font-semibold text-sm">{testimonials[currentTestimonial].role}</p>
+                    <p className="text-brand-secondary text-xs">{testimonials[currentTestimonial].company}</p>
+                    <p className="text-brand-secondary text-xs mt-0.5">Project: {testimonials[currentTestimonial].project}</p>
                   </div>
                 </div>
               </div>
 
               {/* Background Decoration */}
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-br from-brand-primary/10 to-brand-primary/5 rounded-full opacity-50"></div>
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-brand-primary/5 to-brand-primary/10 rounded-full opacity-50"></div>
+              <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-gradient-to-br from-brand-primary/10 to-brand-primary/5 rounded-full opacity-50"></div>
+              <div className="absolute -top-3 -left-3 w-20 h-20 bg-gradient-to-br from-brand-primary/5 to-brand-primary/10 rounded-full opacity-50"></div>
             </div>
 
             {/* Navigation Dots */}
-            <div className="flex justify-center mt-8 space-x-3">
+            <div className="flex justify-center mt-6 space-x-2">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                     currentTestimonial === index
                       ? "bg-gradient-to-r from-brand-primary to-brand-primary scale-125"
                       : "bg-gray-300 hover:bg-gray-400"
@@ -181,9 +181,9 @@ export default function Testimonials() {
 
         {/* Stats Section */}
         <div
-          className={`mt-20 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`mt-12 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
               { number: "98%", label: "Client Satisfaction" },
               { number: "150+", label: "Happy Clients" },
@@ -191,10 +191,10 @@ export default function Testimonials() {
               { number: "24h", label: "Average Response Time" },
             ].map((stat, index) => (
               <div key={index} className="group">
-                <div className="text-3xl md:text-4xl font-bold text-gradient-primary mb-2 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-2xl md:text-3xl font-bold text-gradient-primary mb-1 group-hover:scale-110 transition-transform duration-300">
                   {stat.number}
                 </div>
-                <div className="text-brand-secondary text-sm md:text-base">{stat.label}</div>
+                <div className="text-brand-secondary text-xs md:text-sm">{stat.label}</div>
               </div>
             ))}
           </div>

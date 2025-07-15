@@ -13,7 +13,7 @@ const teamMembers = [
     slug: "sarahjohnson",
     role: "Creative Director",
     department: "Creative",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
     bio: "Award-winning designer with 10+ years of experience in brand identity and visual storytelling.",
     fullBio: "Sarah is an award-winning Creative Director with over a decade of experience in brand identity and visual storytelling. She has led creative teams at top agencies and has worked with Fortune 500 companies to create compelling brand experiences. Her innovative approach to design thinking and brand strategy has earned her recognition in the industry.",
     skills: ["Brand Strategy", "Creative Direction", "Team Leadership", "Visual Identity", "Campaign Development"],
@@ -202,7 +202,7 @@ const teamMembers = [
         title: "Global Tech Rebrand",
         client: "TechCorp International",
         year: "2023",
-        image: "/placeholder.svg",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
         description: "Complete brand identity overhaul for Fortune 500 tech company",
         fullDescription: "A comprehensive brand identity overhaul for TechCorp International, a Fortune 500 technology company. This project involved creating a modern, scalable brand system that would work across all touchpoints and markets globally.",
         role: "Creative Director & Lead Designer",
@@ -226,17 +226,17 @@ const teamMembers = [
           "Digital Asset Library"
         ],
         images: [
-          "/placeholder.svg",
-          "/placeholder.svg",
-          "/placeholder.svg",
-          "/placeholder.svg"
+          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop"
         ]
       },
       {
         title: "Luxury Fashion Campaign",
         client: "Elite Fashion House",
         year: "2022",
-        image: "/placeholder.svg",
+        image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&h=300&fit=crop",
         description: "Seasonal campaign design for high-end fashion brand",
         fullDescription: "A sophisticated seasonal campaign for Elite Fashion House, focusing on their premium collection launch. The project required creating a luxurious visual language that would appeal to discerning fashion enthusiasts.",
         role: "Creative Director",
@@ -260,16 +260,16 @@ const teamMembers = [
           "In-store Visual Merchandising"
         ],
         images: [
-          "/placeholder.svg",
-          "/placeholder.svg",
-          "/placeholder.svg"
+          "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop"
         ]
       },
       {
         title: "Sustainable Packaging Design",
         client: "Green Products Co.",
         year: "2022",
-        image: "/placeholder.svg",
+        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop",
         description: "Eco-friendly packaging solution with award-winning design",
         fullDescription: "An innovative sustainable packaging design for Green Products Co., combining environmental responsibility with premium aesthetics. This project challenged conventional packaging norms while maintaining product protection and shelf appeal.",
         role: "Lead Designer",
@@ -293,8 +293,8 @@ const teamMembers = [
           "Production Cost Analysis"
         ],
         images: [
-          "/placeholder.svg",
-          "/placeholder.svg"
+          "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=600&fit=crop"
         ]
       }
     ]
@@ -307,7 +307,7 @@ const teamMembers = [
     slug: "michaelchen",
     role: "Senior Photo Editor",
     department: "Post-Production",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
     bio: "Master of digital artistry specializing in fashion and commercial photography retouching.",
     fullBio: "Michael is a master of digital artistry with expertise in fashion and commercial photography retouching. His keen eye for detail and technical proficiency have made him an indispensable part of our creative team.",
     skills: ["Photo Retouching", "Color Grading", "Digital Art", "Composite Imaging", "Beauty Retouching"],
@@ -329,7 +329,28 @@ const teamMembers = [
         position: "Senior Photo Editor",
         company: "PixelPrimp Design Agency",
         duration: "2021 - Present",
-        description: "Leading post-production team and handling high-profile retouching projects"
+        description: "Leading post-production team and handling high-profile retouching projects",
+        responsibilities: [
+          "Lead post-production team of 8 specialists",
+          "Handle high-profile fashion and commercial retouching projects",
+          "Develop and maintain color grading standards",
+          "Collaborate with photographers and creative directors",
+          "Manage project timelines and quality control",
+          "Mentor junior retouchers and provide technical guidance"
+        ],
+        achievements: [
+          "Reduced post-production time by 35% through workflow optimization",
+          "Increased client satisfaction scores by 40%",
+          "Developed proprietary retouching techniques adopted company-wide",
+          "Won 3 industry awards for exceptional retouching work"
+        ],
+        technologies: ["Adobe Photoshop", "Capture One", "DaVinci Resolve", "Lightroom"],
+        teamSize: "8 specialists",
+        keyProjects: [
+          "High-end fashion campaign for luxury brand",
+          "Commercial product photography for Fortune 500 company",
+          "Beauty campaign retouching for international cosmetics brand"
+        ]
       }
     ],
     certifications: [
@@ -358,7 +379,69 @@ const teamMembers = [
     specialties: ["Beauty Retouching", "Fashion Photography", "Commercial Imaging", "Color Theory"],
     languages: ["English", "Mandarin", "Japanese"],
     interests: ["Photography", "Digital Art", "Technology", "Martial Arts"],
-    portfolio: []
+    portfolio: [
+      {
+        title: "High-End Fashion Retouching",
+        client: "Luxury Fashion Brand",
+        year: "2023",
+        image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&h=300&fit=crop",
+        description: "Premium beauty retouching for luxury fashion campaign",
+        fullDescription: "Professional beauty retouching for a high-end luxury fashion campaign, focusing on skin perfection, color harmony, and maintaining natural beauty while enhancing the overall aesthetic appeal.",
+        role: "Lead Retoucher",
+        duration: "3 months",
+        teamSize: "4 retouchers",
+        challenge: "Achieving flawless skin retouching while maintaining natural texture and avoiding the over-processed look that's common in fashion photography.",
+        solution: "Developed a custom retouching workflow using frequency separation and advanced masking techniques to preserve skin texture while removing imperfections.",
+        results: [
+          "Client satisfaction rate of 98%",
+          "Featured in top fashion magazines",
+          "Reduced revision requests by 60%",
+          "Award for Best Beauty Retouching 2023"
+        ],
+        technologies: ["Adobe Photoshop", "Capture One", "Wacom Cintiq"],
+        deliverables: [
+          "Retouched Campaign Images",
+          "Before/After Comparisons",
+          "Color Grading Standards",
+          "Workflow Documentation"
+        ],
+        images: [
+          "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop"
+        ]
+      },
+      {
+        title: "Commercial Product Photography",
+        client: "Tech Product Company",
+        year: "2023",
+        image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=300&fit=crop",
+        description: "Product photography retouching for tech company launch",
+        fullDescription: "Comprehensive product photography retouching for a major tech company's product launch, involving complex composite work and precise color matching.",
+        role: "Senior Photo Editor",
+        duration: "2 months",
+        teamSize: "3 editors",
+        challenge: "Creating perfect product shots with consistent lighting and color across multiple product variants while maintaining realistic shadows and reflections.",
+        solution: "Implemented advanced compositing techniques and created custom lighting setups in post-production to achieve consistency across all product images.",
+        results: [
+          "Successfully launched 50+ product images",
+          "Achieved 100% color accuracy across variants",
+          "Reduced photography costs by 40%",
+          "Client extended contract for future products"
+        ],
+        technologies: ["Adobe Photoshop", "Lightroom", "Phase One"],
+        deliverables: [
+          "Product Image Library",
+          "Color Matching Guide",
+          "Composite Templates",
+          "Quality Control Standards"
+        ],
+        images: [
+          "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop"
+        ]
+      }
+    ]
   },
   {
     id: 3,
@@ -366,7 +449,7 @@ const teamMembers = [
     slug: "emilyrodriguez",
     role: "UI/UX Designer",
     department: "Digital Design",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
     bio: "User-centered design expert creating intuitive and beautiful digital experiences.",
     fullBio: "Emily is a user-centered design expert who creates intuitive and beautiful digital experiences. Her research-driven approach and innovative solutions have helped numerous clients improve their digital presence.",
     skills: ["UI Design", "UX Research", "Prototyping", "User Testing", "Information Architecture"],
@@ -388,7 +471,28 @@ const teamMembers = [
         position: "UI/UX Designer",
         company: "PixelPrimp Design Agency",
         duration: "2022 - Present",
-        description: "Creating user-centered digital experiences for diverse clients"
+        description: "Creating user-centered digital experiences for diverse clients",
+        responsibilities: [
+          "Design user-centered digital experiences for diverse client portfolio",
+          "Conduct user research and usability testing",
+          "Create wireframes, prototypes, and high-fidelity designs",
+          "Collaborate with development teams for seamless implementation",
+          "Develop and maintain design systems and style guides",
+          "Present design concepts to stakeholders and clients"
+        ],
+        achievements: [
+          "Improved user engagement by 50% across all client projects",
+          "Reduced design-to-development handoff time by 30%",
+          "Created comprehensive design system used across 15+ projects",
+          "Received UX Design Excellence Award for innovative mobile app design"
+        ],
+        technologies: ["Figma", "Sketch", "Adobe XD", "Principle", "InVision"],
+        teamSize: "6 designers",
+        keyProjects: [
+          "Mobile app redesign for fintech startup",
+          "E-commerce platform UX optimization",
+          "Corporate website design for healthcare company"
+        ]
       }
     ],
     certifications: [
@@ -417,7 +521,71 @@ const teamMembers = [
     specialties: ["Mobile UX", "Design Systems", "User Research", "Accessibility Design"],
     languages: ["English", "Spanish", "Portuguese"],
     interests: ["User Psychology", "Accessibility", "Design Systems", "Hiking"],
-    portfolio: []
+    portfolio: [
+      {
+        title: "Fintech Mobile App Redesign",
+        client: "Digital Banking Startup",
+        year: "2023",
+        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop",
+        description: "Complete UX/UI redesign for mobile banking application",
+        fullDescription: "A comprehensive UX/UI redesign for a digital banking startup's mobile application, focusing on improving user onboarding, transaction flows, and overall user experience.",
+        role: "Lead UX/UI Designer",
+        duration: "4 months",
+        teamSize: "5 designers",
+        challenge: "Creating an intuitive banking experience that builds trust while simplifying complex financial processes for users of all technical backgrounds.",
+        solution: "Conducted extensive user research and usability testing to redesign the information architecture and create a more intuitive navigation system with clear visual hierarchy.",
+        results: [
+          "Increased user engagement by 65%",
+          "Reduced support tickets by 40%",
+          "Improved app store rating from 3.2 to 4.7",
+          "Won UX Design Excellence Award 2023"
+        ],
+        technologies: ["Figma", "Principle", "Maze", "Hotjar"],
+        deliverables: [
+          "User Research Report",
+          "Wireframes & Prototypes",
+          "Design System",
+          "Usability Testing Results",
+          "Developer Handoff Documentation"
+        ],
+        images: [
+          "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop"
+        ]
+      },
+      {
+        title: "E-commerce Platform Optimization",
+        client: "Fashion E-commerce Company",
+        year: "2022",
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
+        description: "UX optimization for online fashion retail platform",
+        fullDescription: "UX optimization project for a major fashion e-commerce platform, focusing on improving conversion rates, reducing cart abandonment, and enhancing the overall shopping experience.",
+        role: "Senior UX Designer",
+        duration: "3 months",
+        teamSize: "4 designers",
+        challenge: "Improving conversion rates and reducing cart abandonment while maintaining the brand's premium aesthetic and user experience standards.",
+        solution: "Redesigned the checkout process, implemented progressive disclosure techniques, and created a more intuitive product discovery system based on user behavior analysis.",
+        results: [
+          "Increased conversion rate by 45%",
+          "Reduced cart abandonment by 30%",
+          "Improved average session duration by 25%",
+          "Generated additional $2M in annual revenue"
+        ],
+        technologies: ["Figma", "Adobe XD", "Google Analytics", "Optimizely"],
+        deliverables: [
+          "Conversion Rate Analysis",
+          "User Journey Maps",
+          "A/B Testing Results",
+          "Redesigned Checkout Flow",
+          "Product Discovery System"
+        ],
+        images: [
+          "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop"
+        ]
+      }
+    ]
   },
   {
     id: 4,
@@ -425,7 +593,7 @@ const teamMembers = [
     slug: "davidkim",
     role: "Motion Graphics Artist",
     department: "Animation",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
     bio: "Bringing static designs to life through compelling animations and motion graphics.",
     fullBio: "David brings static designs to life through compelling animations and motion graphics. His creative vision and technical expertise in animation have elevated countless projects and campaigns.",
     skills: ["2D Animation", "Motion Graphics", "Video Editing", "3D Animation", "Visual Effects"],
@@ -447,7 +615,28 @@ const teamMembers = [
         position: "Motion Graphics Artist",
         company: "PixelPrimp Design Agency",
         duration: "2021 - Present",
-        description: "Creating compelling animations and motion graphics for various campaigns"
+        description: "Creating compelling animations and motion graphics for various campaigns",
+        responsibilities: [
+          "Create compelling animations and motion graphics for client campaigns",
+          "Develop brand animations and explainer videos",
+          "Collaborate with creative directors on visual storytelling",
+          "Manage multiple animation projects simultaneously",
+          "Provide technical expertise in 2D and 3D animation",
+          "Mentor junior animators and provide creative guidance"
+        ],
+        achievements: [
+          "Delivered 50+ successful animation projects with 95% client satisfaction",
+          "Reduced animation production time by 25% through workflow improvements",
+          "Created viral animated content with 2M+ views",
+          "Won Motion Graphics Excellence Award for innovative animation work"
+        ],
+        technologies: ["After Effects", "Cinema 4D", "Blender", "Premiere Pro", "Lottie"],
+        teamSize: "4 animators",
+        keyProjects: [
+          "Brand animation for tech startup launch",
+          "Explainer video series for educational platform",
+          "Motion graphics for national advertising campaign"
+        ]
       }
     ],
     certifications: [
@@ -476,7 +665,71 @@ const teamMembers = [
     specialties: ["Brand Animation", "Explainer Videos", "UI Animation", "3D Motion Graphics"],
     languages: ["English", "Korean"],
     interests: ["Animation", "3D Modeling", "Gaming", "Technology"],
-    portfolio: []
+    portfolio: [
+      {
+        title: "Tech Startup Brand Animation",
+        client: "AI Technology Startup",
+        year: "2023",
+        image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=300&fit=crop",
+        description: "Brand animation suite for tech startup launch",
+        fullDescription: "Comprehensive brand animation suite for an AI technology startup's launch, including logo animations, explainer videos, and social media motion graphics.",
+        role: "Lead Motion Designer",
+        duration: "3 months",
+        teamSize: "3 animators",
+        challenge: "Creating engaging animations that explain complex AI concepts in an accessible way while maintaining the brand's professional image.",
+        solution: "Developed a cohesive animation style guide with clean, modern animations that use metaphors and visual storytelling to simplify complex technical concepts.",
+        results: [
+          "Viral explainer video with 5M+ views",
+          "Increased brand awareness by 200%",
+          "Client secured Series A funding",
+          "Featured on TechCrunch and Wired"
+        ],
+        technologies: ["After Effects", "Cinema 4D", "Premiere Pro", "Lottie"],
+        deliverables: [
+          "Logo Animation Suite",
+          "Explainer Video Series",
+          "Social Media Assets",
+          "Web Animation Components",
+          "Animation Style Guide"
+        ],
+        images: [
+          "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop"
+        ]
+      },
+      {
+        title: "Educational Platform Explainer Series",
+        client: "Online Learning Platform",
+        year: "2022",
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop",
+        description: "Animated explainer video series for online education",
+        fullDescription: "Created an animated explainer video series for an online learning platform, making complex educational concepts accessible and engaging for students of all ages.",
+        role: "Senior Motion Graphics Artist",
+        duration: "4 months",
+        teamSize: "2 animators",
+        challenge: "Creating educational animations that are both informative and entertaining while maintaining consistency across multiple subjects and age groups.",
+        solution: "Developed a flexible animation system with character-based storytelling and interactive elements that could be adapted for different subjects and learning levels.",
+        results: [
+          "Produced 50+ educational videos",
+          "Increased student engagement by 80%",
+          "Reduced learning time by 25%",
+          "Won Educational Media Award 2022"
+        ],
+        technologies: ["After Effects", "Blender", "Premiere Pro", "Audition"],
+        deliverables: [
+          "Educational Video Series",
+          "Character Animation Library",
+          "Interactive Learning Modules",
+          "Animation Templates",
+          "Voice-over Integration"
+        ],
+        images: [
+          "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop"
+        ]
+      }
+    ]
   }
 ]
 
@@ -485,7 +738,6 @@ export default function TeamMemberPage() {
   const router = useRouter()
   const [member, setMember] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [activeTab, setActiveTab] = useState('about')
   const [isExperienceModalOpen, setIsExperienceModalOpen] = useState(false)
   const [selectedExperience, setSelectedExperience] = useState(null)
   const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState(false)
@@ -565,16 +817,8 @@ export default function TeamMemberPage() {
     )
   }
 
-  const tabs = [
-    { id: 'about', label: 'About', icon: '👤' },
-    { id: 'experience', label: 'Experience', icon: '💼' },
-    { id: 'education', label: 'Education', icon: '🎓' },
-    { id: 'portfolio', label: 'Portfolio', icon: '🎨' },
-    { id: 'achievements', label: 'Achievements', icon: '🏆' }
-  ]
-
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white mt-28">
       <Navbar />
       
       {/* Hero Section */}
@@ -664,116 +908,213 @@ export default function TeamMemberPage() {
         </div>
       </section>
 
-      {/* Navigation Tabs */}
-      <section className="bg-white border-b border-gray-200 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex overflow-x-auto">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-6 py-4 text-sm font-semibold whitespace-nowrap border-b-2 transition-colors duration-300 ${
-                  activeTab === tab.id
-                    ? 'border-blue-500 text-blue-600'
-                    : 'border-transparent text-brand-secondary hover:text-brand-primary'
-                }`}
-              >
-                <span className="mr-2">{tab.icon}</span>
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Content Sections */}
+      {/* Content Sections - All displayed sequentially */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* About Tab */}
-          {activeTab === 'about' && (
-            <div className="space-y-12">
-              {/* Skills & Specialties */}
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-2xl font-bold text-brand-primary mb-6">Skills & Expertise</h3>
-                  <div className="space-y-3">
-                    {member.skills.map((skill, index) => (
-                      <div key={index} className="flex items-center p-3 bg-blue-50 rounded-lg">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                        <span className="text-brand-secondary font-medium">{skill}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                <div>
-                  <h3 className="text-2xl font-bold text-brand-primary mb-6">Specialties</h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    {member.specialties.map((specialty, index) => (
-                      <div key={index} className="bg-gray-100 text-brand-primary px-4 py-2 rounded-lg text-sm font-medium text-center">
-                        {specialty}
-                      </div>
-                    ))}
-                  </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+          
+          {/* About Section */}
+          <div className="space-y-12">
+            <div className="text-center">
+              <h3 className="text-3xl font-bold text-brand-primary mb-4">About {member.name}</h3>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            {/* Skills & Specialties */}
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-2xl font-bold text-brand-primary mb-6">Skills & Expertise</h4>
+                <div className="space-y-3">
+                  {member.skills.map((skill, index) => (
+                    <div key={index} className="flex items-center p-3 bg-blue-50 rounded-lg">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <span className="text-brand-secondary font-medium">{skill}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-
-              {/* Personal Info */}
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-blue-50 p-6 rounded-xl">
-                  <h4 className="font-semibold text-brand-primary mb-4">Location</h4>
-                  <p className="text-brand-secondary flex items-center">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    {member.location}
-                  </p>
-                </div>
-                
-                <div className="bg-blue-50 p-6 rounded-xl">
-                  <h4 className="font-semibold text-brand-primary mb-4">Languages</h4>
-                  <div className="space-y-2">
-                    {member.languages.map((language, index) => (
-                      <div key={index} className="text-brand-secondary text-sm">{language}</div>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="bg-blue-50 p-6 rounded-xl">
-                  <h4 className="font-semibold text-brand-primary mb-4">Interests</h4>
-                  <div className="space-y-2">
-                    {member.interests.map((interest, index) => (
-                      <div key={index} className="text-brand-secondary text-sm">{interest}</div>
-                    ))}
-                  </div>
+              
+              <div>
+                <h4 className="text-2xl font-bold text-brand-primary mb-6">Specialties</h4>
+                <div className="grid grid-cols-2 gap-3">
+                  {member.specialties.map((specialty, index) => (
+                    <div key={index} className="bg-gray-100 text-brand-primary px-4 py-2 rounded-lg text-sm font-medium text-center">
+                      {specialty}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          )}
 
-          {/* Experience Tab */}
-          {activeTab === 'experience' && (
+            {/* Personal Info */}
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-blue-50 p-6 rounded-xl">
+                <h5 className="font-semibold text-brand-primary mb-4">Location</h5>
+                <p className="text-brand-secondary flex items-center">
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  {member.location}
+                </p>
+              </div>
+              
+              <div className="bg-blue-50 p-6 rounded-xl">
+                <h5 className="font-semibold text-brand-primary mb-4">Languages</h5>
+                <div className="space-y-2">
+                  {member.languages.map((language, index) => (
+                    <div key={index} className="text-brand-secondary text-sm">{language}</div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="bg-blue-50 p-6 rounded-xl">
+                <h5 className="font-semibold text-brand-primary mb-4">Interests</h5>
+                <div className="space-y-2">
+                  {member.interests.map((interest, index) => (
+                    <div key={index} className="text-brand-secondary text-sm">{interest}</div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Experience Section */}
+          <div>
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold text-brand-primary mb-4">Work Experience</h3>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            <div className="space-y-8">
+              {member.workHistory.map((job, index) => (
+                <div 
+                  key={index} 
+                  className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer group hover:border-blue-200"
+                  onClick={() => openExperienceModal(job)}
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <h4 className="text-xl font-bold text-brand-primary group-hover:text-brand-accent transition-colors duration-300">
+                        {job.position}
+                      </h4>
+                      <p className="text-brand-accent font-semibold">{job.company}</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                        {job.duration}
+                      </span>
+                      <div className="flex items-center text-brand-accent text-sm">
+                        <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                        Details
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-brand-secondary leading-relaxed mb-4">{job.description}</p>
+                  
+                  {/* Quick Stats */}
+                  <div className="flex items-center gap-6 text-sm text-brand-muted">
+                    <div className="flex items-center">
+                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                      Team: {job.teamSize}
+                    </div>
+                    <div className="flex items-center">
+                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      </svg>
+                      Projects: {job.keyProjects.length}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Education Section */}
+          <div className="space-y-12">
+            <div className="text-center">
+              <h3 className="text-3xl font-bold text-brand-primary mb-4">Education & Certifications</h3>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
             <div>
-              <h3 className="text-2xl font-bold text-brand-primary mb-8">Work Experience</h3>
-              <div className="space-y-8">
-                {member.workHistory.map((job, index) => (
+              <h4 className="text-2xl font-bold text-brand-primary mb-8">Education</h4>
+              <div className="space-y-6">
+                {member.education.map((edu, index) => (
+                  <div key={index} className="bg-white border border-gray-200 rounded-xl p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h5 className="text-xl font-bold text-brand-primary">{edu.degree}</h5>
+                        <p className="text-brand-accent font-semibold">{edu.school}</p>
+                      </div>
+                      <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                        {edu.year}
+                      </span>
+                    </div>
+                    <p className="text-brand-secondary">{edu.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-2xl font-bold text-brand-primary mb-8">Certifications</h4>
+              <div className="grid md:grid-cols-2 gap-6">
+                {member.certifications.map((cert, index) => (
+                  <div key={index} className="bg-blue-50 p-6 rounded-xl">
+                    <h5 className="font-bold text-brand-primary mb-2">{cert.name}</h5>
+                    <p className="text-brand-accent text-sm mb-2">{cert.issuer} • {cert.year}</p>
+                    <p className="text-brand-secondary text-sm">{cert.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Portfolio Section */}
+          <div>
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold text-brand-primary mb-4">Featured Work</h3>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            {member.portfolio.length > 0 ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {member.portfolio.map((project, index) => (
                   <div 
                     key={index} 
-                    className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer group hover:border-blue-200"
-                    onClick={() => openExperienceModal(job)}
+                    className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group hover:transform hover:-translate-y-1"
+                    onClick={() => openPortfolioModal(project)}
                   >
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex-1">
-                        <h4 className="text-xl font-bold text-brand-primary group-hover:text-brand-accent transition-colors duration-300">
-                          {job.position}
-                        </h4>
-                        <p className="text-brand-accent font-semibold">{job.company}</p>
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <button className="bg-white text-brand-primary px-4 py-2 rounded-full font-semibold transform scale-90 group-hover:scale-100 transition-all duration-300">
+                            <span className="flex items-center">
+                              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                              </svg>
+                              View Details
+                            </span>
+                          </button>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-3">
-                        <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                          {job.duration}
-                        </span>
+                    </div>
+                    
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-bold text-brand-primary group-hover:text-brand-accent transition-colors duration-300">
+                          {project.title}
+                        </h4>
                         <div className="flex items-center text-brand-accent text-sm">
                           <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -781,169 +1122,60 @@ export default function TeamMemberPage() {
                           Details
                         </div>
                       </div>
-                    </div>
-                    <p className="text-brand-secondary leading-relaxed mb-4">{job.description}</p>
-                    
-                    {/* Quick Stats */}
-                    <div className="flex items-center gap-6 text-sm text-brand-muted">
-                      <div className="flex items-center">
-                        <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                        Team: {job.teamSize}
-                      </div>
-                      <div className="flex items-center">
-                        <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                        </svg>
-                        Projects: {job.keyProjects.length}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Education Tab */}
-          {activeTab === 'education' && (
-            <div className="space-y-12">
-              <div>
-                <h3 className="text-2xl font-bold text-brand-primary mb-8">Education</h3>
-                <div className="space-y-6">
-                  {member.education.map((edu, index) => (
-                    <div key={index} className="bg-white border border-gray-200 rounded-xl p-6">
-                      <div className="flex items-start justify-between mb-4">
-                        <div>
-                          <h4 className="text-xl font-bold text-brand-primary">{edu.degree}</h4>
-                          <p className="text-brand-accent font-semibold">{edu.school}</p>
-                        </div>
-                        <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                          {edu.year}
+                      <p className="text-brand-accent text-sm mb-3">{project.client} • {project.year}</p>
+                      <p className="text-brand-secondary text-sm line-clamp-2">{project.description}</p>
+                      
+                      {/* Role Badge */}
+                      <div className="mt-4 pt-3 border-t border-gray-100">
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+                          {project.role}
                         </span>
                       </div>
-                      <p className="text-brand-secondary">{edu.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold text-brand-primary mb-8">Certifications</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {member.certifications.map((cert, index) => (
-                    <div key={index} className="bg-blue-50 p-6 rounded-xl">
-                      <h4 className="font-bold text-brand-primary mb-2">{cert.name}</h4>
-                      <p className="text-brand-accent text-sm mb-2">{cert.issuer} • {cert.year}</p>
-                      <p className="text-brand-secondary text-sm">{cert.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Portfolio Tab */}
-          {activeTab === 'portfolio' && (
-            <div>
-              <h3 className="text-2xl font-bold text-brand-primary mb-8">Featured Work</h3>
-              {member.portfolio.length > 0 ? (
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {member.portfolio.map((project, index) => (
-                    <div 
-                      key={index} 
-                      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group hover:transform hover:-translate-y-1"
-                      onClick={() => openPortfolioModal(project)}
-                    >
-                      <div className="relative overflow-hidden">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        
-                        {/* Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <button className="bg-white text-brand-primary px-4 py-2 rounded-full font-semibold transform scale-90 group-hover:scale-100 transition-all duration-300">
-                              <span className="flex items-center">
-                                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                </svg>
-                                View Details
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="p-6">
-                        <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-bold text-brand-primary group-hover:text-brand-accent transition-colors duration-300">
-                            {project.title}
-                          </h4>
-                          <div className="flex items-center text-brand-accent text-sm">
-                            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                            Details
-                          </div>
-                        </div>
-                        <p className="text-brand-accent text-sm mb-3">{project.client} • {project.year}</p>
-                        <p className="text-brand-secondary text-sm line-clamp-2">{project.description}</p>
-                        
-                        {/* Role Badge */}
-                        <div className="mt-4 pt-3 border-t border-gray-100">
-                          <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
-                            {project.role}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center py-12">
-                  <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                  </div>
-                  <p className="text-brand-secondary">Portfolio coming soon...</p>
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* Achievements Tab */}
-          {activeTab === 'achievements' && (
-            <div>
-              <h3 className="text-2xl font-bold text-brand-primary mb-8">Awards & Recognition</h3>
-              <div className="space-y-6">
-                {member.achievements.map((achievement, index) => (
-                  <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                        <svg className="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <h4 className="text-lg font-bold text-brand-primary">{achievement.title}</h4>
-                          <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                            {achievement.year}
-                          </span>
-                        </div>
-                        <p className="text-brand-secondary">{achievement.description}</p>
-                      </div>
                     </div>
                   </div>
                 ))}
               </div>
+            ) : (
+              <div className="text-center py-12">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </div>
+                <p className="text-brand-secondary">Portfolio coming soon...</p>
+              </div>
+            )}
+          </div>
+
+          {/* Achievements Section */}
+          <div>
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold text-brand-primary mb-4">Awards & Recognition</h3>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
             </div>
-          )}
+            <div className="space-y-6">
+              {member.achievements.map((achievement, index) => (
+                <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
+                  <div className="flex items-start">
+                    <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <svg className="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="text-lg font-bold text-brand-primary">{achievement.title}</h4>
+                        <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                          {achievement.year}
+                        </span>
+                      </div>
+                      <p className="text-brand-secondary">{achievement.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

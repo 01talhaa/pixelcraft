@@ -5,32 +5,47 @@ import { useRouter } from "next/navigation"
 import AdminLogin from "@/components/admin/AdminLogin"
 import AdminDashboard from "@/components/admin/AdminDashboard"
 
+interface Credentials {
+  username: string
+  password: string
+}
+
+interface TokenData {
+  user: string
+  expiry: number
+  timestamp: number
+}
+
 export default function AdminPage() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
   const router = useRouter()
 
   useEffect(() => {
     // Check if user is already authenticated
     const token = localStorage.getItem("admin_token")
     if (token) {
-      // Verify token (in a real app, you'd validate with your backend)
-      const tokenData = JSON.parse(token)
-      const currentTime = Date.now()
-      
-      if (currentTime < tokenData.expiry) {
-        setIsAuthenticated(true)
-      } else {
+      try {
+        // Verify token (in a real app, you'd validate with your backend)
+        const tokenData: TokenData = JSON.parse(token)
+        const currentTime = Date.now()
+        
+        if (currentTime < tokenData.expiry) {
+          setIsAuthenticated(true)
+        } else {
+          localStorage.removeItem("admin_token")
+        }
+      } catch (error) {
         localStorage.removeItem("admin_token")
       }
     }
     setIsLoading(false)
   }, [])
 
-  const handleLogin = (credentials) => {
+  const handleLogin = (credentials: Credentials): boolean => {
     // Demo authentication - in production, use proper authentication
     if (credentials.username === "admin" && credentials.password === "pixelprimp2024") {
-      const token = {
+      const token: TokenData = {
         user: "admin",
         expiry: Date.now() + (24 * 60 * 60 * 1000), // 24 hours
         timestamp: Date.now()
@@ -42,7 +57,7 @@ export default function AdminPage() {
     return false
   }
 
-  const handleLogout = () => {
+  const handleLogout = (): void => {
     localStorage.removeItem("admin_token")
     setIsAuthenticated(false)
     router.push("/")

@@ -90,7 +90,7 @@ export default function Newsletter() {
                   <span>Stay Updated</span>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl font-bold text-brand-primary mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-brand-primary mb-6">
                   Join Our
                   <span className="text-gradient-primary">
                     {" "}

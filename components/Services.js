@@ -30,6 +30,7 @@ export default function Services() {
     {
       icon: "📸",
       title: "Photo Editing",
+      image: "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=400&h=300&fit=crop&crop=center",
       description: "Professional photo retouching, color correction, and enhancement services",
       features: ["Color Grading", "Retouching", "Background Removal", "HDR Processing"],
       price: "Starting at $25",
@@ -51,6 +52,7 @@ export default function Services() {
     {
       icon: "🎨",
       title: "Graphic Design",
+      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop&crop=center",
       description: "Creative visual solutions for branding, marketing, and digital media",
       features: ["Logo Design", "Brand Identity", "Print Design", "Digital Graphics"],
       price: "Starting at $50",
@@ -72,6 +74,7 @@ export default function Services() {
     {
       icon: "🌐",
       title: "Web Graphics",
+      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop&crop=center",
       description: "Stunning web-ready graphics and user interface design elements",
       features: ["UI/UX Design", "Web Banners", "Social Media", "Icon Design"],
       price: "Starting at $75",
@@ -93,6 +96,7 @@ export default function Services() {
     {
       icon: "📱",
       title: "Mobile Design",
+      image: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=400&h=300&fit=crop&crop=center",
       description: "Mobile-first design approach for apps and responsive interfaces",
       features: ["App Design", "Mobile UI", "Responsive Design", "Prototyping"],
       price: "Starting at $100",
@@ -114,6 +118,7 @@ export default function Services() {
     {
       icon: "🎬",
       title: "Motion Graphics",
+      image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=400&h=300&fit=crop&crop=center",
       description: "Dynamic animations and motion graphics for digital platforms",
       features: ["2D Animation", "Video Graphics", "Logo Animation", "Transitions"],
       price: "Starting at $150",
@@ -135,6 +140,7 @@ export default function Services() {
     {
       icon: "🖼️",
       title: "Brand Identity",
+      image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=400&h=300&fit=crop&crop=center",
       description: "Complete brand identity packages and visual communication systems",
       features: ["Brand Strategy", "Visual Identity", "Style Guides", "Brand Assets"],
       price: "Starting at $200",
@@ -206,7 +212,7 @@ export default function Services() {
               <span>Our Services</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-primary mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-primary mb-6">
               What We
               <span className="text-gradient-primary"> Create</span>
             </h2>
@@ -218,74 +224,92 @@ export default function Services() {
           </div>
 
           {/* Services Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className={`group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer border border-gray-100 hover:border-blue-200 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-                onMouseEnter={() => setHoveredService(index)}
-                onMouseLeave={() => setHoveredService(null)}
-                onClick={() => openModal(service)}
-              >
-                {/* Card Header with Gradient Background */}
-                <div className="relative h-24 bg-gradient-to-br from-blue-500/10 to-blue-600/20 flex items-center justify-center">
-                  <div className="text-5xl transform group-hover:scale-110 transition-transform duration-300">
-                    {service.icon}
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <div className="text-brand-accent text-sm font-semibold bg-white/80 px-3 py-1 rounded-full">
-                      {service.price}
+
+
+          {/* Infinite Horizontal Scroll Section */}
+          <div className={`relative mb-16 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+
+            {/* Infinite Scroll Container */}
+            <div className="relative overflow-hidden">
+              {/* Gradient Overlays */}
+              <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
+              
+              {/* Scrolling Content */}
+              <div className="flex animate-infinite-scroll">
+                {/* First Set */}
+                {services.map((service, index) => (
+                  <div
+                    key={`first-${index}`}
+                    className="flex-shrink-0 mx-4 w-80 bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-blue-100"
+                    onClick={() => openModal(service)}
+                  >
+                    {/* Service Image */}
+                    <div className="relative overflow-hidden rounded-xl mb-4">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      <div className="absolute bottom-3 left-3">
+                        <div className="text-3xl">{service.icon}</div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center mb-4">
+                      <div>
+                        <h4 className="font-bold text-brand-primary text-lg">{service.title}</h4>
+                        <p className="text-brand-accent font-semibold text-sm">{service.price}</p>
+                      </div>
+                    </div>
+                    <p className="text-brand-secondary text-sm mb-4 line-clamp-2">
+                      {service.description}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-brand-muted">⏱️ {service.deliveryTime}</span>
+                      <span className="text-xs text-blue-600 font-semibold">Learn More →</span>
                     </div>
                   </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="p-6">
-                  {/* Title */}
-                  <h3 className="text-2xl font-bold text-brand-primary mb-3 group-hover:text-brand-accent transition-colors duration-300">
-                    {service.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-brand-secondary mb-4 leading-relaxed text-sm">
-                    {service.description}
-                  </p>
-
-                  {/* Delivery Time */}
-                  <div className="flex items-center text-brand-muted text-sm mb-4">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {service.deliveryTime}
-                  </div>
-
-                  {/* Features Grid */}
-                  <div className="grid grid-cols-2 gap-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center text-xs text-brand-secondary">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 flex-shrink-0"></div>
-                        <span className="truncate">{feature}</span>
+                ))}
+                
+                {/* Second Set (Duplicate for seamless loop) */}
+                {services.map((service, index) => (
+                  <div
+                    key={`second-${index}`}
+                    className="flex-shrink-0 mx-4 w-80 bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-blue-100"
+                    onClick={() => openModal(service)}
+                  >
+                    {/* Service Image */}
+                    <div className="relative overflow-hidden rounded-xl mb-4">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      <div className="absolute bottom-3 left-3">
+                        <div className="text-3xl">{service.icon}</div>
                       </div>
-                    ))}
+                    </div>
+                    
+                    <div className="flex items-center mb-4">
+                      <div>
+                        <h4 className="font-bold text-brand-primary text-lg">{service.title}</h4>
+                        <p className="text-brand-accent font-semibold text-sm">{service.price}</p>
+                      </div>
+                    </div>
+                    <p className="text-brand-secondary text-sm mb-4 line-clamp-2">
+                      {service.description}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-brand-muted">⏱️ {service.deliveryTime}</span>
+                      <span className="text-xs text-blue-600 font-semibold">Learn More →</span>
+                    </div>
                   </div>
-
-                  {/* View Details Button */}
-                  <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-4 rounded-lg font-semibold text-sm hover:shadow-lg transition-all duration-300 transform group-hover:scale-105">
-                    View Details
-                  </button>
-                </div>
-
-                {/* Hover Effect Border */}
-                <div
-                  className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-300 ${
-                    hoveredService === index ? "opacity-100" : "opacity-0"
-                  }`}
-                ></div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
 
           {/* CTA */}
@@ -301,8 +325,18 @@ export default function Services() {
 
       {/* Service Detail Modal */}
       {isModalOpen && selectedService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="relative bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              closeModal()
+            }
+          }}
+        >
+          <div 
+            className="relative bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Modal Header */}
             <div className="sticky top-0 bg-white border-b border-gray-200 p-6 flex items-center justify-between rounded-t-2xl">
               <div className="flex items-center">

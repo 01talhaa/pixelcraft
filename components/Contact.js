@@ -184,7 +184,7 @@ Sent from website chat`
             <span>Get In Touch</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-primary mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-primary mb-6">
             Let's Create
             <span className="text-gradient-primary">
               {" "}

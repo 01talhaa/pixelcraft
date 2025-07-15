@@ -215,10 +215,10 @@ export default function Hero() {
       </div>
 
       {/* Enhanced Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce z-20">
         <div className="flex flex-col items-center">
-          <div className="text-gray-400 text-sm mb-2 tracking-wider">SCROLL DOWN</div>
-          <div className="w-6 h-12 border-2 border-white/30 rounded-full flex justify-center relative">
+          <div className="text-gray-400 text-xs sm:text-sm mb-2 tracking-wider text-center">SCROLL DOWN</div>
+          <div className="w-6 h-12 border-2 border-white/30 rounded-full flex justify-center items-start relative">
             <div className="w-1.5 h-4 bg-gradient-to-b from-blue-400 to-indigo-400 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>

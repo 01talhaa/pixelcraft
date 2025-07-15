@@ -262,30 +262,30 @@ export default function Navbar() {
           isShrinked ? "py-0 max-h-0 opacity-0" : "py-2 sm:py-3 max-h-20 opacity-100"
         }`}>
           {/* Mobile: Show only essential info */}
-          <div className="flex items-center space-x-3 sm:space-x-6 text-gray-600 text-xs sm:text-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-6 text-gray-600 text-xs sm:text-sm">
             <span className="flex items-center">
               <span className="mr-1 sm:mr-2">📧</span>
               <span className="hidden sm:inline">hello@pixelprimp.com</span>
-              <span className="sm:hidden">hello@pixelprimp.com</span>
+              <span className="sm:hidden text-xs">hello@pixelprimp.com</span>
             </span>
             <span className="flex items-center">
               <span className="mr-1 sm:mr-2">📞</span>
-              <span className="hidden sm:inline">+1 (555) 123-4567</span>
-              <span className="sm:hidden">+1 (555) 123-4567</span>
+              {/* <span className="hidden sm:inline">+1 (555) 123-4567</span> */}
+              <span className=" sm:inline text-2xs">555-123-4567</span>
             </span>
           </div>
           
           {/* Mobile: Compact right section */}
-          <div className="flex items-center space-x-2 sm:space-x-4 text-gray-600 text-xs sm:text-sm">
+          <div className="flex items-center space-x-1 sm:space-x-4 text-gray-600 text-xs sm:text-sm">
             <Link href="#contact" className="hover:text-blue-600 transition-colors hidden sm:inline">
               Help
             </Link>
-            <Link href="#contact" className="hover:text-blue-600 transition-colors">
+            <Link href="#contact" className="hover:text-blue-600 transition-colors hidden xs:inline sm:inline text-xs">
               Contact
             </Link>
             <div className="flex items-center space-x-1 sm:space-x-2">
               <span className="text-xs hidden sm:inline">Follow us:</span>
-              <span className="text-xs sm:hidden">Follow:</span>
+              <span className="text-xs xs:hidden">Follow:</span>
               <div className="flex space-x-1">
                 <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors text-sm">📷</a>
                 <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors text-sm">🎨</a>

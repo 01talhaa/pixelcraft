@@ -265,7 +265,7 @@ export default function Portfolio() {
           </div>
 
           {/* Modern Infinite Scroll Portfolio */}
-          <div className={`relative mb-12 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div className={`relative mb-12 transition-all duration-800 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             {/* Infinite Scroll Container */}
             <div className="relative overflow-hidden">
               {/* Gradient Overlays */}
@@ -273,7 +273,7 @@ export default function Portfolio() {
               <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
               
               {/* Scrolling Content */}
-              <div className="flex animate-infinite-scroll">
+              <div className="flex animate-infinite-scroll sm:animate-infinite-scroll-desktop">
                 {/* First Set of Projects */}
                 {projects.map((project, index) => (
                   <div 
@@ -664,6 +664,33 @@ export default function Portfolio() {
           </div>
         </div>
       )}
+
+      {/* Custom Styles for Mobile Scroll Speed */}
+      <style jsx>{`
+        @keyframes infinite-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        
+        @keyframes infinite-scroll-desktop {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        
+        .animate-infinite-scroll {
+          animation: infinite-scroll 15s linear infinite;
+        }
+        
+        .animate-infinite-scroll-desktop {
+          animation: infinite-scroll-desktop 30s linear infinite;
+        }
+        
+        @media (max-width: 640px) {
+          .animate-infinite-scroll {
+            animation: infinite-scroll 5s linear infinite;
+          }
+        }
+      `}</style>
     </>
   )
 }

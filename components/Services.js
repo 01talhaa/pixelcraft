@@ -236,7 +236,7 @@ export default function Services() {
               <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
               
               {/* Scrolling Content */}
-              <div className="flex animate-infinite-scroll">
+              <div className="flex animate-infinite-scroll sm:animate-infinite-scroll-desktop">
                 {/* First Set */}
                 {services.map((service, index) => (
                   <div
@@ -322,6 +322,33 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      {/* Custom Styles for Mobile Scroll Speed */}
+      <style jsx>{`
+        @keyframes infinite-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        
+        @keyframes infinite-scroll-desktop {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        
+        .animate-infinite-scroll {
+          animation: infinite-scroll 15s linear infinite;
+        }
+        
+        .animate-infinite-scroll-desktop {
+          animation: infinite-scroll-desktop 30s linear infinite;
+        }
+        
+        @media (max-width: 640px) {
+          .animate-infinite-scroll {
+            animation: infinite-scroll 5s linear infinite;
+          }
+        }
+      `}</style>
 
       {/* Service Detail Modal */}
       {isModalOpen && selectedService && (

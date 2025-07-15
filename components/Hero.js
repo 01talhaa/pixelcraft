@@ -27,14 +27,14 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 pb-52">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-bl from-slate-900 via-blue-300 to-indigo-300 pb-52">
       {/* Dynamic Background with Real Images */}
       <div className="absolute inset-0">
         {/* Main Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=1920&h=1080&fit=crop')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1685375422585-4502d20a2f6b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODF8fGdyYXBoaWNzJTIwZGVzaWdufGVufDB8fDB8fHww')`,
           }}
         ></div>
         

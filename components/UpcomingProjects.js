@@ -204,20 +204,34 @@ export default function UpcomingProjects() {
           
           {/* Floating geometric shapes */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {[...Array(15)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute animate-float-slow"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 5}s`,
-                  animationDuration: `${8 + Math.random() * 4}s`,
-                }}
-              >
-                <div className={`w-2 h-2 bg-blue-500/30 ${Math.random() > 0.5 ? 'rounded-full' : 'rotate-45'}`}></div>
-              </div>
-            ))}
+            {[...Array(15)].map((_, i) => {
+              // Use seeded values based on index for consistent SSR/client rendering
+              const positions = [
+                { left: 15, top: 25 }, { left: 72, top: 45 }, { left: 88, top: 67 },
+                { left: 42, top: 12 }, { left: 18, top: 78 }, { left: 65, top: 34 },
+                { left: 29, top: 89 }, { left: 81, top: 23 }, { left: 56, top: 56 },
+                { left: 33, top: 71 }, { left: 77, top: 19 }, { left: 51, top: 84 },
+                { left: 26, top: 38 }, { left: 69, top: 62 }, { left: 84, top: 41 }
+              ];
+              const delays = [0.3, 1.8, 2.1, 0.7, 2.4, 3.2, 0.9, 1.5, 2.8, 0.4, 1.9, 3.5, 1.2, 2.6, 0.8];
+              const durations = [8.2, 10.1, 9.3, 11.7, 8.9, 9.8, 10.5, 8.6, 9.4, 10.8, 11.2, 8.7, 9.1, 10.3, 8.8];
+              const shapes = [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true];
+              
+              return (
+                <div
+                  key={i}
+                  className="absolute animate-float-slow"
+                  style={{
+                    left: `${positions[i].left}%`,
+                    top: `${positions[i].top}%`,
+                    animationDelay: `${delays[i]}s`,
+                    animationDuration: `${durations[i]}s`,
+                  }}
+                >
+                  <div className={`w-2 h-2 bg-blue-500/30 ${shapes[i] ? 'rounded-full' : 'rotate-45'}`}></div>
+                </div>
+              );
+            })}
           </div>
         </div>
 

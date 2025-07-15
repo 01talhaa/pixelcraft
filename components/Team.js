@@ -374,18 +374,31 @@ export default function Team() {
         
         {/* Floating particles */}
         <div className="absolute inset-0 overflow-hidden">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-blue-500/20 rounded-full animate-float"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${3 + Math.random() * 4}s`,
-              }}
-            />
-          ))}
+          {[...Array(20)].map((_, i) => {
+            // Use seeded values based on index for consistent SSR/client rendering
+            const positions = [
+              { left: 12, top: 18 }, { left: 67, top: 34 }, { left: 89, top: 72 }, { left: 23, top: 45 },
+              { left: 45, top: 67 }, { left: 78, top: 23 }, { left: 34, top: 89 }, { left: 56, top: 12 },
+              { left: 90, top: 56 }, { left: 21, top: 78 }, { left: 65, top: 34 }, { left: 43, top: 90 },
+              { left: 87, top: 21 }, { left: 19, top: 65 }, { left: 76, top: 43 }, { left: 32, top: 87 },
+              { left: 54, top: 19 }, { left: 81, top: 76 }, { left: 28, top: 32 }, { left: 72, top: 54 }
+            ];
+            const delays = [0.2, 1.1, 2.3, 0.8, 1.9, 3.1, 0.5, 2.7, 1.5, 4.2, 0.9, 2.1, 3.8, 1.6, 2.9, 0.3, 1.7, 2.5, 3.4, 0.6];
+            const durations = [3.5, 5.2, 4.1, 6.3, 3.8, 4.7, 5.9, 3.3, 4.5, 5.6, 6.1, 3.9, 4.3, 5.4, 3.7, 4.9, 5.8, 3.6, 4.2, 5.3];
+            
+            return (
+              <div
+                key={i}
+                className="absolute w-2 h-2 bg-blue-500/20 rounded-full animate-float"
+                style={{
+                  left: `${positions[i].left}%`,
+                  top: `${positions[i].top}%`,
+                  animationDelay: `${delays[i]}s`,
+                  animationDuration: `${durations[i]}s`,
+                }}
+              />
+            );
+          })}
         </div>
       </div>
 

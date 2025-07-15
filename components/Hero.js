@@ -74,33 +74,46 @@ export default function Hero() {
         <div className="absolute top-1/2 left-3/4 w-64 h-64 bg-purple-500/10 rounded-full blur-2xl animate-bounce animation-delay-2000"></div>
         
         {/* Floating Design Elements */}
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute opacity-60 animate-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${8 + Math.random() * 4}s`,
-            }}
-          >
-            {i % 4 === 0 && (
-              <div className="w-6 h-6 border-2 border-blue-400/40 rounded-full"></div>
-            )}
-            {i % 4 === 1 && (
-              <div className="w-4 h-4 bg-indigo-400/40 rounded-full"></div>
-            )}
-            {i % 4 === 2 && (
-              <div className="w-5 h-5 bg-purple-400/40 transform rotate-45"></div>
-            )}
-            {i % 4 === 3 && (
-              <svg className="w-5 h-5 text-blue-400/40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L13.09 8.26L19 9L13.09 9.74L12 16L10.91 9.74L5 9L10.91 8.26L12 2Z" />
-              </svg>
-            )}
-          </div>
-        ))}
+        {[...Array(15)].map((_, i) => {
+          // Use seeded values based on index for consistent SSR/client rendering
+          const positions = [
+            { left: 23, top: 12 }, { left: 67, top: 34 }, { left: 89, top: 76 },
+            { left: 45, top: 23 }, { left: 12, top: 67 }, { left: 78, top: 89 },
+            { left: 34, top: 45 }, { left: 56, top: 12 }, { left: 90, top: 34 },
+            { left: 21, top: 78 }, { left: 65, top: 56 }, { left: 43, top: 90 },
+            { left: 87, top: 21 }, { left: 19, top: 65 }, { left: 76, top: 43 }
+          ];
+          const delays = [0.5, 1.2, 2.3, 0.8, 1.9, 3.1, 0.3, 2.7, 1.5, 4.2, 0.9, 2.1, 3.8, 1.6, 2.9];
+          const durations = [8.5, 10.2, 9.1, 11.3, 8.8, 9.7, 10.9, 8.3, 9.5, 10.6, 11.1, 8.9, 9.3, 10.4, 8.7];
+          
+          return (
+            <div
+              key={i}
+              className="absolute opacity-60 animate-float"
+              style={{
+                left: `${positions[i].left}%`,
+                top: `${positions[i].top}%`,
+                animationDelay: `${delays[i]}s`,
+                animationDuration: `${durations[i]}s`,
+              }}
+            >
+              {i % 4 === 0 && (
+                <div className="w-6 h-6 border-2 border-blue-400/40 rounded-full"></div>
+              )}
+              {i % 4 === 1 && (
+                <div className="w-4 h-4 bg-indigo-400/40 rounded-full"></div>
+              )}
+              {i % 4 === 2 && (
+                <div className="w-5 h-5 bg-purple-400/40 transform rotate-45"></div>
+              )}
+              {i % 4 === 3 && (
+                <svg className="w-5 h-5 text-blue-400/40" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L13.09 8.26L19 9L13.09 9.74L12 16L10.91 9.74L5 9L10.91 8.26L12 2Z" />
+                </svg>
+              )}
+            </div>
+          );
+        })}
       </div>
 
       {/* Main Content */}

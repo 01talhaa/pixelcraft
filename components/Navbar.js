@@ -12,8 +12,74 @@ export default function Navbar() {
   const [servicesTimeout, setServicesTimeout] = useState(null)
   const [isServiceModalOpen, setIsServiceModalOpen] = useState(false)
   const [selectedService, setSelectedService] = useState(null)
+  const [user, setUser] = useState(null);
   const router = useRouter()
   const pathname = usePathname()
+  // Check for user in localStorage on mount and listen for changes
+  useEffect(() => {
+    async function syncUserFromStorage() {
+      if (typeof window !== "undefined") {
+        const userData = localStorage.getItem("pixelprimp_user");
+        if (userData) {
+          try {
+            const parsed = JSON.parse(userData);
+            setUser(parsed);
+            // If token is missing but refreshToken exists, try to refresh
+            if ((!parsed.token || parsed.token === "") && parsed.refreshToken) {
+              await tryRefresh(parsed.refreshToken);
+            }
+          } catch {
+            setUser(null);
+          }
+        } else {
+          // If no user, but refreshToken exists, try to refresh
+          const refreshToken = localStorage.getItem("pixelprimp_refresh_token");
+          if (refreshToken) {
+            await tryRefresh(refreshToken);
+          } else {
+            setUser(null);
+          }
+        }
+      }
+    }
+
+    async function tryRefresh(refreshToken) {
+      try {
+        const res = await fetch(`${process.env.API_BASE_URL || "https://api2.pixelprimp.com"}/api/clients/refresh`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ refreshToken }),
+        });
+        const data = await res.json();
+        if (data.success && data.data) {
+          const userObj = {
+            id: data.data.id,
+            name: data.data.name,
+            email: data.data.email,
+            phone: data.data.phone,
+            token: data.data.token,
+            refreshToken: data.data.refreshToken,
+            identifier: data.data.email || data.data.phone
+          };
+          localStorage.setItem("pixelprimp_user", JSON.stringify(userObj));
+          localStorage.setItem("pixelprimp_refresh_token", data.data.refreshToken);
+          setUser(userObj);
+        } else {
+          setUser(null);
+          localStorage.removeItem("pixelprimp_user");
+          localStorage.removeItem("pixelprimp_refresh_token");
+        }
+      } catch {
+        setUser(null);
+        localStorage.removeItem("pixelprimp_user");
+        localStorage.removeItem("pixelprimp_refresh_token");
+      }
+    }
+
+    syncUserFromStorage();
+    window.addEventListener("storage", syncUserFromStorage);
+    return () => window.removeEventListener("storage", syncUserFromStorage);
+  }, []);
 
   const handleServicesMouseEnter = () => {
     if (servicesTimeout) {
@@ -406,14 +472,68 @@ export default function Navbar() {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-3">
-            {/* Desktop Auth Buttons */}
+            {/* Desktop Auth Buttons or User Info */}
             <div className="hidden sm:flex items-center space-x-3">
-              <button className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 rounded-lg hover:bg-gray-50">
-                Login
-              </button>
-              <button className="bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-colors duration-200">
-                Sign Up
-              </button>
+            {user ? (
+                <div className="relative group">
+                  <button
+                    className="flex items-center space-x-3 bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-xl focus:outline-none"
+                    tabIndex={0}
+                  >
+                    <div className="w-9 h-9 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-lg">
+                      {user.name ? user.name[0].toUpperCase() : (user.email || user.identifier || "U")[0].toUpperCase()}
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="font-semibold text-gray-800 dark:text-white text-base truncate max-w-[120px]">{user.name || "User"}</span>
+                      <span className="text-xs text-gray-500 dark:text-gray-300 truncate max-w-[120px]">{user.email || user.identifier}</span>
+                    </div>
+                    <svg className="ml-2 w-4 h-4 text-gray-500 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                  {/* Dropdown menu */}
+                  <div className="absolute right-0 mt-2 w-44 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg z-50 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto transition-all duration-200"
+                    tabIndex={-1}
+                  >
+                    <button
+                      className="block w-full text-left px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-t-xl"
+                      onClick={() => router.push("/profile")}
+                    >
+                      Profile
+                    </button>
+                    <button
+                      className="block w-full text-left px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-800"
+                      onClick={() => router.push("/#services")}
+                    >
+                      Services
+                    </button>
+                    <button
+                      className="block w-full text-left px-4 py-3 text-red-600 hover:bg-red-50 dark:hover:bg-gray-800 rounded-b-xl"
+                      onClick={() => {
+                        setUser(null);
+                        localStorage.removeItem("pixelprimp_user");
+                        localStorage.removeItem("pixelprimp_refresh_token");
+                        window.dispatchEvent(new Event("storage"));
+                        router.push("/");
+                      }}
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <button className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 rounded-lg hover:bg-gray-50"
+                    onClick={() => router.push("/login")}
+                  >
+                    Login
+                  </button>
+                  <button
+                    className="bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-colors duration-200"
+                    onClick={() => router.push("/signup")}
+                  >
+                    Sign Up
+                  </button>
+                </>
+              )}
             </div>
 
             
@@ -456,12 +576,78 @@ export default function Navbar() {
               </a>
               <div className="pt-4 border-t border-gray-200">
                 <div className="flex flex-col space-y-3">
-                  <button className="w-full text-gray-700 hover:text-blue-600 transition-colors font-medium py-3 px-4 rounded-lg hover:bg-gray-50 border border-gray-300">
-                    Login
-                  </button>
-                  <button className="w-full bg-primary text-white py-3 px-4 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200">
-                    Sign Up
-                  </button>
+                  {user ? (
+                    <div className="relative group">
+                      <button
+                        className="flex items-center space-x-3 bg-gray-100 dark:bg-gray-800 px-4 py-3 rounded-xl w-full focus:outline-none"
+                        tabIndex={0}
+                      >
+                        <div className="w-9 h-9 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-lg">
+                          {user.name ? user.name[0].toUpperCase() : (user.email || user.identifier || "U")[0].toUpperCase()}
+                        </div>
+                        <div className="flex flex-col text-left">
+                          <span className="font-semibold text-gray-800 dark:text-white text-base truncate max-w-[120px]">{user.name || "User"}</span>
+                          <span className="text-xs text-gray-500 dark:text-gray-300 truncate max-w-[120px]">{user.email || user.identifier}</span>
+                        </div>
+                        <svg className="ml-2 w-4 h-4 text-gray-500 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                      </button>
+                      {/* Dropdown menu */}
+                      <div className="absolute right-0 mt-2 w-44 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg z-50 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto transition-all duration-200"
+                        tabIndex={-1}
+                      >
+                        <button
+                          className="block w-full text-left px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-t-xl"
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            router.push("/profile");
+                          }}
+                        >
+                          Profile
+                        </button>
+                        <button
+                          className="block w-full text-left px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-800"
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            router.push("/#services");
+                          }}
+                        >
+                          Services
+                        </button>
+                        <button
+                          className="block w-full text-left px-4 py-3 text-red-600 hover:bg-red-50 dark:hover:bg-gray-800 rounded-b-xl"
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            setUser(null);
+                            localStorage.removeItem("pixelprimp_user");
+                            localStorage.removeItem("pixelprimp_refresh_token");
+                            window.dispatchEvent(new Event("storage"));
+                            router.push("/");
+                          }}
+                        >
+                          Logout
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <button className="w-full text-gray-700 hover:text-blue-600 transition-colors font-medium py-3 px-4 rounded-lg hover:bg-gray-50 border border-gray-300"
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          router.push("/login");
+                        }}>
+                        Login
+                      </button>
+                      <button
+                        className="w-full bg-primary text-white py-3 px-4 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200"
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          router.push("/signup");
+                        }}
+                      >
+                        Sign Up
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
             </div>

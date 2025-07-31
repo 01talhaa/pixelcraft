@@ -11,7 +11,19 @@ export const metadata: Metadata = {
     'social media graphics', 'business cards', 'brochures', 'flyers', 'posters', 'brand strategy', 'style guides',
     'HDR processing', 'background removal', 'wedding photo editing', 'product photography', 'real estate photo editing',
     'marketing collateral', 'packaging design', 'illustration', 'icon design', 'explainer video', 'brand guidelines',
-    'creative studio', 'design agency', 'digital branding', 'visual communication', 'creative solutions', 'design portfolio'
+    'creative studio', 'design agency', 'digital branding', 'visual communication', 'creative solutions', 'design portfolio',
+    'web development', 'app development', 'desktop app development', 'mobile app development', 'frontend development', 'backend development',
+    'full stack development', 'UI design', 'UX design', 'user experience', 'user interface', 'responsive design', 'website design',
+    'landing page design', 'ecommerce development', 'react', 'next.js', 'node.js', 'typescript', 'javascript', 'html', 'css',
+    'tailwindcss', 'sass', 'less', 'figma', 'adobe xd', 'sketch', 'prototyping', 'wireframing', 'app prototyping',
+    'software development', 'custom software', 'enterprise software', 'cloud applications', 'api development', 'cms development',
+    'wordpress', 'shopify', 'woocommerce', 'saas', 'pwa', 'progressive web app', 'cross platform app', 'native app',
+    'windows app', 'mac app', 'linux app', 'branding agency', 'creative direction', 'digital agency', 'technology solutions',
+    'innovation', 'startup', 'business solutions', 'automation', 'digital transformation', 'it consulting', 'it services',
+    'branding solutions', 'marketing agency', 'seo', 'search engine optimization', 'sem', 'search engine marketing',
+    'content creation', 'copywriting', 'blog design', 'newsletter design', 'presentation design', 'pitch deck design',
+    'logo animation', 'video editing', 'motion design', 'interactive design', 'usability', 'accessibility', 'web accessibility',
+    'performance optimization', 'web security', 'ssl', 'hosting', 'domain', 'maintenance', 'support', 'analytics', 'tracking'
   ],
   openGraph: {
     title: 'PixelPrimp | Photo Editing, Graphic Design, Web Design, Branding',
@@ -67,6 +79,8 @@ export default function RootLayout({
         <link rel="canonical" href="https://pixelprimp.com" />
         <link rel="alternate" hrefLang="en" href="https://pixelprimp.com" />
         {/* Favicon and icons */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
